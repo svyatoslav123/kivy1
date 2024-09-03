@@ -16,18 +16,21 @@ class MyApp(App):
         layout = BoxLayout(orientation="vertical")
         self.add_widget(layout)
 
-        self.title = Label(text = 'play',font_size='48sp', size_hint(1, 0.8))
+        self.title = Label(text = 'play',font_size='48sp', size_hint=(1, 0.8))
         layout.add_widget(self.title)
 
         play_button = Button(text='play',size_hint=(1, 0.2))
 
-        play_button.bind(on_press=self.go_to)
+        play_button.bind(on_press=self.go_to_game_selection())
+        layout.add_widget(self.play_button)
+
+
 
 class ClickerApp(App):
    def build(self):
-    sm = ScreenManager()
-    sm.add_widget(MainScreen(name='main'))
-    return sm
+        sm = ScreenManager()
+        sm.add_widget(MainScreen(name='main'))
+        return sm
 
 
 class ScrButton(Button):
