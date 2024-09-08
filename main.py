@@ -8,7 +8,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 
 Window.size = (800, 600)
 
-class MyApp(App):
+class MainScreen(Screen):
     def go_to_game_selection(self, *args):
         self.manager.current = "game_selection"
     def __init__(self,**kwargs):
