@@ -26,11 +26,7 @@ class MainScreen(Screen):
 
 
 
-class ClickerApp(App):
-   def build(self):
-        sm = ScreenManager()
-        sm.add_widget(MainScreen(name='main'))
-        return sm
+
 
 
 class ScrButton(Button):
@@ -43,6 +39,12 @@ class ScrButton(Button):
     def on_press(self):
         self.screen.manger.transition.direction = self.direction
         self.screen.manger.current = self.goal
+
+class ClickerApp(App):
+    def build(self):
+        sm = ScreenManager()
+        sm.add_widget(MainScreen(name='main'))
+        return sm
 
 
 app = MyApp()
